@@ -4,7 +4,9 @@ var fs = require('fs');
 var path = require('path');
 var colors = require('colors');
 var clc = require('command-line-commands');
+var Promise = require('bluebird');
 var acsiiArt = require('./lib/Art');
+var LambdaDeployer = require('./lib/LambdaDeployer');
 
 var cli = clc([
     { name: 'help' },
@@ -17,19 +19,25 @@ var command = cli.parse();
 
 console.log(acsiiArt.intro);
 
+var lambdaDeployer = new LambdaDeployer(process.cwd());
+
 switch (command.name) {
     case 'help':
-        console.log('hello'.blue);
-        console.log("I can't help you.");
+        displayHelp();
         break;
-    case 'init':
-        console.log('Initializing project for lambda functions');
+    case 'deploy':
+        lambdaDeployer.deployLambda();
         break;
     default:
-        console.log('usage: baryon <command>');
-        console.log('');
-        console.log('baryon commands include:');
-        console.log('  init    Initializes a project with all the needed config files');
-        console.log('  deploy  Deploys all the Lambda functions contained in the project');
+        console.error('Command not found');
+        displayHelp();
 }
 
+
+function displayHelp() {
+    console.log('usage: baryon <command>');
+    console.log('');
+    console.log('baryon commands include:');
+    console.log('  init    Initializes a project with all the needed config files');
+    console.log('  deploy  Deploys all the Lambda functions contained in the project');
+}
