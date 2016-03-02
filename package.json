@@ -1,0 +1,34 @@
+{
+  "name": "baryon",
+  "version": "1.0.0",
+  "description": "Simple AWS Lambda deployment command line interface",
+  "main": "bin/baryon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steamedcotton/baryon.git"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "baryon": "baryon-cli.js"
+  },
+  "keywords": [
+    "aws",
+    "lambda"
+  ],
+  "author": "Eric Erickson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/steamedcotton/baryon/issues"
+  },
+  "homepage": "https://github.com/steamedcotton/baryon#readme",
+  "dependencies": {
+    "aws-sdk": "^2.2.40",
+    "bluebird": "^3.3.3",
+    "colors": "^1.1.2",
+    "command-line-commands": "^0.1.2",
+    "lodash": "^4.5.1"
+  }
+}
