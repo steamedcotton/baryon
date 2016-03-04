@@ -1,6 +1,6 @@
 {
   "name": "baryon",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Simple AWS Lambda deployment command line interface",
   "main": "bin/baryon.js",
   "scripts": {
@@ -29,6 +29,7 @@
     "bluebird": "^3.3.3",
     "colors": "^1.1.2",
     "command-line-commands": "^0.1.2",
+    "inquirer": "^0.12.0",
     "lodash": "^4.5.1"
   }
 }

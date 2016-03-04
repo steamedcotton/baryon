@@ -43,7 +43,7 @@ Or you can manually create the needed configuration file in your project root (b
 ### Configuration file (baryon.json) Params:
 
 |Config Param       |Description                                                 |
-|-------------------|------------------------------------------------------------|
+|-------------------|:-----------------------------------------------------------|
 |AWS_ACCOUNT_ID     |Your Amazon AWS account number                              |
 |LAMBDA_PREFIX      |Prefix that all the Lambda directories/functions start with |
 |LAMBDA_ROLE        |Name of the role that the Lambda function will use          |
