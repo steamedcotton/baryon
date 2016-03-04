@@ -7,26 +7,30 @@ var clc = require('command-line-commands');
 var Promise = require('bluebird');
 var acsiiArt = require('./lib/Art');
 var LambdaDeployer = require('./lib/LambdaDeployer');
+var InitConfig = require('./lib/InitConfig');
 
 var cli = clc([
     { name: 'help' },
     { name: 'init' },
-    { name: 'deploy' }
+    { name: 'deploy' },
+    { name: 'config', definitions: [ { name: 'function', type: String } ] }
 ]);
-//definitions: [ { name: 'why', type: String } ]
 
 var command = cli.parse();
 
 console.log(acsiiArt.intro);
-
-var lambdaDeployer = new LambdaDeployer(process.cwd());
 
 switch (command.name) {
     case 'help':
         displayHelp();
         break;
     case 'deploy':
+        var lambdaDeployer = new LambdaDeployer(process.cwd());
         lambdaDeployer.deployLambda();
+        break;
+    case 'init':
+        var initConfig = new InitConfig(process.cwd());
+        initConfig.launchConfigWizard();
         break;
     default:
         console.error('Command not found');
