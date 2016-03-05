@@ -35,7 +35,10 @@ Or you can manually create the needed configuration file in your project root (b
     "AWS_ACCOUNT_ID": "123456789456",
     "LAMBDA_PREFIX": "MyPrefix",
     "LAMBDA_ROLE": "MyLambdaRole",
-    "LAMBDA_REGION": "us-west-2"
+    "LAMBDA_REGION": "us-west-2",
+    "LAMBDA_MEMORY": "256",
+    "LAMDBA_TIMEOUT": 3,
+    "LAMBDA_HANDLER": "index.handler"
 }
 ```
 
