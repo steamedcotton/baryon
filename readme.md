@@ -36,6 +36,7 @@ Or you can manually create the needed configuration file in your project root (b
     "LAMBDA_PREFIX": "MyPrefix",
     "LAMBDA_ROLE": "MyLambdaRole",
     "LAMBDA_REGION": "us-west-2",
+    "LAMBDA_RUNTIME": "nodejs4.3",
     "LAMBDA_MEMORY": "256",
     "LAMDBA_TIMEOUT": 3,
     "LAMBDA_HANDLER": "index.handler"
