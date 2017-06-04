@@ -1,6 +1,6 @@
 {
   "name": "baryon",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "Simple AWS Lambda deployment command line interface",
   "main": "bin/baryon.js",
   "scripts": {
