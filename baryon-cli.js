@@ -14,7 +14,7 @@ var InitConfig = require('./lib/InitConfig');
 var cli = clc([
     { name: 'help' },
     { name: 'init' },
-    { name: 'run-local', definitions: [ { name: 'lambdaName', type: String } ] },
+    { name: 'run-local', definitions: [ { name: 'lambda', type: String } ] },
     { name: 'deploy' },
     { name: 'config', definitions: [ { name: 'function', type: String } ] }
 ]);
@@ -36,11 +36,12 @@ switch (command.name) {
         initConfig.launchConfigWizard();
         break;
     case 'run-local':
+        console.log(command.options);
         if (_.isEmpty(command.options)) {
             console.log('Interactive mode is not available ... yet');
         } else {
             var lambdaRunner = new LambdaRunner(process.cwd());
-            lambdaRunner.runLambda(command.options.lambdaName)
+            lambdaRunner.runLambda(command.options.lambda)
                 .then(function() {
                     console.log('Done');
                 })
@@ -64,5 +65,5 @@ function displayHelp() {
     console.log('  init                                Initializes a project with all the needed config files');
     console.log('  deploy                              Deploys all the Lambda functions contained in the project');
     //console.log('  run-local                           Interactive menu to launch a Lambda locally');
-    console.log('  run-local --lambdaName=LAMBDA-NAME  Launches the specified Lambda locally');
+    console.log('  run-local --lambda=LAMBDA-NAME  Launches the specified Lambda locally');
 }
